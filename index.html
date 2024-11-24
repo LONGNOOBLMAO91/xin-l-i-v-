@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xin Lỗi Ny</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            text-align: center;
+            position: relative;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .agree {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .disagree {
+            background-color: #f44336;
+            color: white;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Tha lỗi cho anh!</h1>
+    <p>Bé có đồng ý tha lỗi cho anh không?</p>
+    <button class="agree" onclick="handleAgree()">Đồng ý</button>
+    <button class="disagree" onclick="handleDisagree(this)">Không</button>
+</div>
+
+<script>
+    function handleAgree() {
+        // Hiển thị thông báo cảm ơn
+        alert("Cảm ơn em!");
+    }
+
+    function handleDisagree(button) {
+        // Di chuyển nút "Không" ra xa
+        const randomX = Math.floor(Math.random() * (window.innerWidth - 100)); // Tính toán vị trí ngẫu nhiên
+        const randomY = Math.floor(Math.random() * (window.innerHeight - 100)); // Tính toán vị trí ngẫu nhiên
+        button.style.position = 'absolute'; // Đặt vị trí tuyệt đối
+        button.style.left = randomX + 'px'; // Di chuyển sang trái
+        button.style.top = randomY + 'px'; // Di chuyển xuống dưới
+    }
+</script>
+
+</body>
+</html>
